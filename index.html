@@ -686,7 +686,7 @@ document.getElementById('regForm').addEventListener('submit', async e => {
   btn.innerHTML = '<span>Submitting…</span>';
 
   try {
-    const res = await fetch('/api/register', {
+    const res = await fetch('https://vizora-backend.onrender.com/api/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
