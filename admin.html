@@ -264,7 +264,7 @@ async function doLogin() {
   btn.disabled = true;
 
   try {
-    const res = await fetch('https://vizora-backend.onrender.com/api/admin/login', {
+    const res = await fetch('/api/admin/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username: u, password: p })
@@ -318,7 +318,7 @@ function showDash() {
 // ─── Data ──────────────────────────────────────────────────────────────────
 async function loadData() {
   try {
-    const res = await fetch('https://vizora-backend.onrender.com/api/registrations', {
+    const res = await fetch('/api/registrations', {
       headers: { 'Authorization': `Bearer ${adminToken}` }
     });
     if (res.status === 401) { doLogout(); return; }
@@ -381,7 +381,7 @@ function filterTable() {
 async function clearAll() {
   if (!confirm('Delete ALL registrations? This cannot be undone.')) return;
   try {
-    const res = await fetch('https://vizora-backend.onrender.com/api/registrations', {
+    const res = await fetch('/api/registrations', {
       method: 'DELETE',
       headers: { 'Authorization': `Bearer ${adminToken}` }
     });
