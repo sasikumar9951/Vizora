@@ -246,6 +246,9 @@ tbody tr td:first-child{color:var(--text-muted);font-family:'Courier New',monosp
 </div>
 
 <script>
+// ─── API Base ──────────────────────────────────────────────────────────────
+const API_BASE = "https://vizora-backend.onrender.com";
+
 // ─── State ─────────────────────────────────────────────────────────────────
 let allData = [];
 let adminToken = null; // stored in memory only — never in localStorage
@@ -264,7 +267,7 @@ async function doLogin() {
   btn.disabled = true;
 
   try {
-    const res = await fetch('/api/admin/login', {
+    const res = await fetch(`${API_BASE}/api/admin/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username: u, password: p })
@@ -318,7 +321,7 @@ function showDash() {
 // ─── Data ──────────────────────────────────────────────────────────────────
 async function loadData() {
   try {
-    const res = await fetch('/api/registrations', {
+    const res = await fetch(`${API_BASE}/api/registrations`, {
       headers: { 'Authorization': `Bearer ${adminToken}` }
     });
     if (res.status === 401) { doLogout(); return; }
@@ -381,7 +384,7 @@ function filterTable() {
 async function clearAll() {
   if (!confirm('Delete ALL registrations? This cannot be undone.')) return;
   try {
-    const res = await fetch('/api/registrations', {
+    const res = await fetch(`${API_BASE}/api/registrations`, {
       method: 'DELETE',
       headers: { 'Authorization': `Bearer ${adminToken}` }
     });
