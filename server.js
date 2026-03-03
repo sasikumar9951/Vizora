@@ -20,7 +20,7 @@ pool.connect()
 // ─── Middleware ───────────────────────────────────────────────────────────────
 app.use(cors({ origin: process.env.ALLOWED_ORIGIN || '*' }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname)));
 
 // ─── Routes ───────────────────────────────────────────────────────────────────
 
@@ -132,6 +132,6 @@ function requireAdmin(req, res, next) {
 }
 
 // ─── Catch-all → serve frontend ───────────────────────────────────────────────
-app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
 
 app.listen(PORT, () => console.log(`🚀  VIZORA server running on http://localhost:${PORT}`));
