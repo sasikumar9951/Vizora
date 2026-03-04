@@ -2174,8 +2174,9 @@
       <li><a href="#about">About</a></li>
       <li><a href="#guest">Chief Guest</a></li>
       <li><a href="#rules">Rules</a></li>
-      <li><a href="#register">Register</a></li>
-      <li><a href="admin.html" class="n-admin">Admin</a></li>
+      <li><a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSccqxDJ6KqcU4hQu0n8wlX9EFNQ2RoF-LkkUkn8xdCJboHLpA/viewform?usp=publish-editor"
+          target="_blank" rel="noopener">Register</a></li>
     </ul>
     <button class="n-tog" id="ntog" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
@@ -2226,7 +2227,8 @@
       <p class="h-desc">Join VIZORA — a 2-day UI&amp;UX App Design Competition where creativity meets usability. Design
         a mobile app interface and present your working prototype!</p>
       <div class="h-actions">
-        <a href="#register" class="btn-p">Register Now →</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSccqxDJ6KqcU4hQu0n8wlX9EFNQ2RoF-LkkUkn8xdCJboHLpA/viewform?usp=publish-editor"
+          target="_blank" rel="noopener" class="btn-p">Register Now →</a>
         <a href="#about" class="btn-g">Explore Event →</a>
       </div>
       <div class="h-stats">
@@ -2469,62 +2471,7 @@
     </div>
   </section>
 
-  <!-- ====== REGISTER ====== -->
-  <section id="register" class="sec register">
-    <div class="sh rv">
-      <div class="stag">Join The Pixel War</div>
-      <h2 class="stitle">Register <span class="hl">Now</span></h2>
-      <p class="ssub">Registrations open March 2, 2026. Fill in your team details and secure your spot at VIZORA!</p>
-    </div>
-    <div class="f-wrap rv">
-      <div class="f-glass">
-        <form id="regForm" novalidate>
-          <div class="fsec">◈ Team Details</div>
-          <div class="frow">
-            <div class="fg"><label>Team Name</label><input type="text" id="teamName" placeholder="e.g. PixelCraft"
-                required /></div>
-            <div class="fg"><label>College Name</label><input type="text" id="collegeName"
-                placeholder="Your Institution" required /></div>
-          </div>
-          <div class="fg"><label>Department Name</label><input type="text" id="deptName"
-              placeholder="e.g. Computer Science &amp; Engineering" required /></div>
-          <div class="fdiv"></div>
-          <div class="fsec">◈ Member 1 (Team Leader)</div>
-          <div class="frow">
-            <div class="fg"><label>Full Name</label><input type="text" id="m1name" placeholder="Member 1 Name"
-                required /></div>
-            <div class="fg"><label>Phone Number</label><input type="tel" id="m1phone" placeholder="+91 XXXXX XXXXX"
-                required /></div>
-          </div>
-          <div class="fg"><label>Email Address</label><input type="email" id="m1email" placeholder="member1@email.com"
-              required /></div>
-          <div class="fdiv"></div>
-          <div class="fsec">◈ Member 2</div>
-          <div class="frow">
-            <div class="fg"><label>Full Name</label><input type="text" id="m2name" placeholder="Member 2 Name"
-                required /></div>
-            <div class="fg"><label>Phone Number</label><input type="tel" id="m2phone" placeholder="+91 XXXXX XXXXX"
-                required /></div>
-          </div>
-          <div class="fg"><label>Email Address</label><input type="email" id="m2email" placeholder="member2@email.com"
-              required /></div>
-          <div class="fdiv"></div>
-          <div class="fsec">◈ Demo Design</div>
-          <div class="fg"><label>Demo Design Link (Figma)</label><input type="url" id="demoLink"
-              placeholder="https://figma.com/..." required /></div>
-          <button type="submit" class="sbtn"><span>Submit Registration</span><span class="sarr">→</span></button>
-        </form>
-      </div>
-    </div>
-    <div id="modal" class="modal hidden">
-      <div class="mbox">
-        <div class="mico">✓</div>
-        <h3>Registration Successful!</h3>
-        <p>Your team has been registered for VIZORA 2026. Confirmation sent to <span id="cemail"></span>.</p>
-        <button class="mcls" onclick="closeM()">Awesome! 🎉</button>
-      </div>
-    </div>
-  </section>
+
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -2537,7 +2484,8 @@
       </div>
       <div class="f-links">
         <a href="#home">Home</a><a href="#about">About</a><a href="#guest">Guest</a><a href="#rules">Rules</a><a
-          href="#register">Register</a>
+          href="https://docs.google.com/forms/d/e/1FAIpQLSccqxDJ6KqcU4hQu0n8wlX9EFNQ2RoF-LkkUkn8xdCJboHLpA/viewform?usp=publish-editor"
+          target="_blank" rel="noopener">Register</a>
       </div>
     </div>
     <div class="f-bot">© 2026 VIZORA · Dept. of CSE · Mahendra Engineering College · Namakkal, Tamil Nadu</div>
@@ -2630,67 +2578,7 @@
       });
     });
 
-    /* ===== FORM ===== */
-    document.getElementById('regForm').addEventListener('submit', async e => {
-      e.preventDefault();
-      const ids = ['teamName', 'collegeName', 'deptName', 'm1name', 'm1phone', 'm1email', 'm2name', 'm2phone', 'm2email', 'demoLink'];
-      let ok = true;
-      ids.forEach(id => {
-        const el = document.getElementById(id);
-        if (!el.value.trim()) { el.style.borderColor = '#ff6b6b'; el.style.boxShadow = '0 0 0 3px rgba(255,80,80,.1)'; ok = false; }
-        else { el.style.borderColor = ''; el.style.boxShadow = ''; }
-      });
-      if (!ok) {
-        const fg = document.querySelector('.f-glass');
-        fg.style.animation = 'none';
-        requestAnimationFrame(() => fg.style.animation = 'shake .45s ease');
-        return;
-      }
 
-      const payload = {
-        teamName: document.getElementById('teamName').value.trim(),
-        collegeName: document.getElementById('collegeName').value.trim(),
-        deptName: document.getElementById('deptName').value.trim(),
-        m1name: document.getElementById('m1name').value.trim(),
-        m1phone: document.getElementById('m1phone').value.trim(),
-        m1email: document.getElementById('m1email').value.trim(),
-        m2name: document.getElementById('m2name').value.trim(),
-        m2phone: document.getElementById('m2phone').value.trim(),
-        m2email: document.getElementById('m2email').value.trim(),
-        demoLink: document.getElementById('demoLink').value.trim()
-      };
-
-      // Disable button while submitting
-      const btn = document.querySelector('.sbtn');
-      const origHTML = btn.innerHTML;
-      btn.disabled = true;
-      btn.innerHTML = '<span>Submitting…</span>';
-
-      try {
-        const res = await fetch(`${API_BASE}/api/register`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        const json = await res.json();
-
-        if (json.success) {
-          document.getElementById('cemail').textContent = payload.m1email;
-          document.getElementById('modal').classList.remove('hidden');
-          document.getElementById('regForm').reset();
-        } else {
-          alert('Registration failed: ' + (json.message || 'Please try again.'));
-        }
-      } catch (err) {
-        alert('Network error. Please check your connection and try again.');
-      } finally {
-        btn.disabled = false;
-        btn.innerHTML = origHTML;
-      }
-    });
-    document.querySelectorAll('.fg input').forEach(i => { i.addEventListener('input', () => { if (i.value.trim()) { i.style.borderColor = ''; i.style.boxShadow = '' } }) });
-    function closeM() { const m = document.getElementById('modal'); m.style.opacity = '0'; m.style.transition = 'opacity .3s'; setTimeout(() => m.classList.add('hidden'), 300) }
-    window.closeM = closeM;
 
     /* ===== ACTIVE NAV ===== */
     const secs = document.querySelectorAll('section[id]'), navAs = document.querySelectorAll('.n-links a');
